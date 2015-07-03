@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML5 Summary &amp; Details Test</title>
+  <style type="text/css">
+    details { padding-left: 1em; border: 1px dotted black; }
+    details summary { margin-left: -.8em; }
+    details summary:hover { background-color: #FCF6CF; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1><abbr>HTML</abbr>5 Summary &amp; Details Test</h1>
+  <p>Background reading:</p>
+  <ul>
+    <li>Tom Leadbetter: <a href="http://html5doctor.com/the-details-and-summary-elements/">The details and summary elements</a>, Tuesday, August 9th, 2011.</li>
+    <li>Jason Kiss: <a href="http://www.accessibleculture.org/articles/2012/03/screen-readers-and-details-summary/">Screen Readers and details/summary</a>
+      Accessible Culture, March 2012.
+    </li>
+  </ul>
+
+  <h2>With "open" attribute</h2>
+  <details open="open">
+    <summary>Show/Hide Details</summary>
+    <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
+      You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
+      <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
+      (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
+      <!-- http://html5doctor.com/the-details-and-summary-elements/ -->
+    </p>
+  </details>
+
+  <h2>Without "open" attribute</h2>
+  <details>
+    <summary>Show/Hide Details</summary>
+    <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
+      You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
+      <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
+      (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
+    </p>
+  </details>
+
+  <h2>Without "open" attribute, and tabindex=0 on summary</h2>
+  <p>Tabindex=0 makes the summary keyboard-focusable in Google Chrome 17, but not keyboard-actionable.</p>
+  <details>
+    <summary tabindex="0">Show/Hide Details</summary>
+    <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
+      You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
+      <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
+      (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
+    </p>
+  </details>
+
+  <h2>Nested Details</h2>
+  <details>
+    <summary>Frequently Asked Questions</summary>
+    <details>
+      <summary>Where can I access Webmail?</summary>
+      <p>Go the the <a href="http://www.hdm-stuttgart.de/"><abbr>HdM</abbr> homepage</a> and follow the link "Webmail" at the top of the page.</p>
+    </details>
+    <details>
+      <summary>Where can I find the list of teachin assistants for Media Informatics</summary>
+      <p>You can find the list in German at <a href="http://www.mi.hdm-stuttgart.de/Ueber_uns/Mitarbeiter">http://www.mi.hdm-stuttgart.de/Ueber_uns/Mitarbeiter</a>.
+      </p>
+    </details>
+  </details>
+  <h2>Browser Support</h2>
+  <p>Tests 21 March 2012:</p>
+  <ul>
+    <li>Google Chrome 17.0.963.79m: supported for pointing devices but no keyboard access.</li>
+    <li>Opera 11.61: not supported (details always open; no disclosure widget)</li>
+    <li>SeaMonkey 2.7.2: not supported (details always open; no disclosure widget)</li>
+    <li>Safari 4.0.4 (Windows XP): not supported (details always open; no disclosure widget)</li>
+    <li>Firefox 3.6.27: not supported (details always open; no disclosure widget)</li>
+    <li>Internet Explorer 8.0.6001.18702: not supported (details always open; no disclosure widget)</li>
+  </ul>
+</body>
+</html>
