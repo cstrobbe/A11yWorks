@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <title>Accessibility Works</title>
-  <style type="text/css">
-  </style>
+  <!--link rel="stylesheet" href="css/defaultStyle.css" media="screen" type="text/css" /-->
 </head>
 <body>
-  <div id="header">
+  <header id="header" role="banner">
     <h1>Accessibility Works</h1>
-  </div><!-- end #header -->
+  </header>
 
-  <div id="main">
+  <!--nav id="nav" role="navigation">
+  </nav-->
+
+  <main id="main" role="main">
     <p>A website with notes and test files for accessibility (mostly web accessibility).</p>
     <ul>
-      <li><a href="wcagtests/html5/HTML5_SummaryDetailsTest.html">test for details and summary elements</a> (2012, updated July 2015).</li>
+      <li><a href="wcagtests/html5/HTML5_SummaryDetailsTest.html">test for 
+        <code>details</code> and <code>summary</code> elements</a> (2012, updated July 2015).
+      </li>
     </ul>
-  </div>
+  </main>
 
-  <div id="footer">
+  <footer id="footer">
     <p id="licence">
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
     <img alt="Creative Commons License Attribution-ShareAlike" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
@@ -32,9 +36,9 @@
     xml:lang="en-US" lang="en-US" rel="license"
     href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
     Attribution-ShareAlike 4.0 International License</a>. </p>
-    
+
     <p>You can <a href="https://github.com/cstrobbe/A11yWorks">fork
     the code</a> on GitHub.</p>
-  </div><!-- end #footer -->
+  </footer>
 </body>
 </html>
