@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>HTML5 Summary &amp; Details: Browser Support</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="../../css/verdemoderna.css" title="default" />
   <style type="text/css">
     details { padding-left: 1em; border: 1px dotted black; }
     details summary { margin-left: -.8em; }
@@ -11,120 +12,129 @@
   </style>
 </head>
 <body>
-  <h1><abbr>HTML</abbr>5 Summary &amp; Details: Browser Support</h1>
-  <p>This page contains various tests with the <code>details</code> and <code>summary</code>
-    elements. The page was first created in March 2012 and updated in July 2015.
-    See the test results in the <a href="#summary">summary</a> at the end of this page.
-  </p>
-  <p>Background reading:</p>
-  <ul>
-    <li>Tom Leadbetter: <a href="http://html5doctor.com/the-details-and-summary-elements/">The details and summary elements</a>, Tuesday, August 9th, 2011.</li>
-    <li>Jason Kiss: <a href="http://www.accessibleculture.org/articles/2012/03/screen-readers-and-details-summary/">Screen Readers and details/summary</a>
-      Accessible Culture, March 2012.
-    </li>
-  </ul>
+  <header id="header" role="banner">
+    <h1><span class="h1txt"><abbr>HTML</abbr>5 Summary &amp; Details: Browser Support</span></h1>
+  </header>
 
-  <h2>With "open" attribute</h2>
-  <details open="open">
-    <summary>Show/Hide Details</summary>
-    <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
-      You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
-      <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
-      (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
-      <!-- http://html5doctor.com/the-details-and-summary-elements/ -->
+  <main id="main" role="main">
+    <p>This page contains various tests with the <code>details</code> and <code>summary</code>
+      elements. The page was first created in March 2012 and updated in July 2015.
+      See the test results in the <a href="#summary">summary</a> at the end of this page.
     </p>
-  </details>
-
-  <h2>Without "open" attribute</h2>
-  <details>
-    <summary>Show/Hide Details</summary>
-    <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
-      You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
-      <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
-      (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
-    </p>
-  </details>
-
-  <h2>Without "open" attribute, and tabindex=0 on summary</h2>
-  <p>Tabindex=0 makes the summary keyboard-focusable in Google Chrome 17 (2012), but not keyboard-actionable.
-    In 2015, 
-  </p>
-  <details>
-    <summary tabindex="0">Show/Hide Details</summary>
-    <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
-      You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
-      <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
-      (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
-    </p>
-  </details>
-
-  <h2>Nested Details</h2>
-  <details>
-    <summary>Frequently Asked Questions</summary>
-    <details>
-      <summary>Where can I access Webmail?</summary>
-      <p>Go the the <a href="http://www.hdm-stuttgart.de/"><abbr>HdM</abbr> homepage</a> and follow the link "Webmail" at the top of the page.</p>
-    </details>
-    <details>
-      <summary>Where can I find the list of teaching assistants for Media Informatics</summary>
-      <p>You can find the list in German at <a href="http://www.mi.hdm-stuttgart.de/Ueber_uns/Mitarbeiter">http://www.mi.hdm-stuttgart.de/Ueber_uns/Mitarbeiter</a>.
+    <p>Background reading:</p>
+    <ul>
+      <li>Tom Leadbetter: <a href="http://html5doctor.com/the-details-and-summary-elements/">The details and summary elements</a>, Tuesday, August 9th, 2011.</li>
+      <li>Jason Kiss: <a href="http://www.accessibleculture.org/articles/2012/03/screen-readers-and-details-summary/">Screen Readers and details/summary</a>
+        Accessible Culture, March 2012.
+      </li>
+    </ul>
+  
+    <h2>With "open" attribute</h2>
+    <details open="open">
+      <summary>Show/Hide Details</summary>
+      <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
+        You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
+        <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
+        (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
+        <!-- http://html5doctor.com/the-details-and-summary-elements/ -->
       </p>
     </details>
-  </details>
-  <h2 id="summary">Browser Support</h2>
-  <p>Tests 21 March 2012:</p>
-  <ul>
-    <li>Google Chrome 17.0.963.79m: supported for pointing devices but no keyboard access.</li>
-    <li>Opera 11.61: not supported (<code>details</code> always open; no disclosure widget)</li>
-    <li>Firefox 3.6.27: not supported (<code>details</code> always open; no disclosure widget)</li>
-    <li>SeaMonkey 2.7.2: not supported (<code>details</code> always open; no disclosure widget)</li>
-    <li>Internet Explorer 8.0.6001.18702: not supported (<code>details</code> always open; no disclosure widget)</li>
-    <li>Safari 4.0.4 (Windows XP): not supported (<code>details</code> always open; no disclosure widget)</li>
-  </ul>
-  <p>Tests 4 July 2015 (Microsoft Windows 7, 32 bits):</p>
-  <ul>
-    <li>Google Chrome 43.0.2357.130 m: fully supported, both for pointing devices and keyboard access
-      (tab to the <code>summary</code> element, then press the keyboard to open or close the details).
-    </li>
-    <li>Opera 30.0 (which uses WebKit as browser engine): 
-      same support as in Google Chrome 43.
-    </li>
-    <li>Comodo Dragon 43.3.3.185 (a Chromium-based browser): 
-      same support as in Google Chrome 43.
-    </li>
-    <li>Firefox 38.0.5: not supported (<code>details</code> always open; no disclosure widget)
-      only the <code>summary</code> element with <code>tabindex=0</code> is keyboard-focusable.
-    </li>
-    <li>SeaMonkey 2.33.1: not supported (same as in Firefox)</li>
-    <li>Internet Explorer 11.0.9600.17843: not supported (same as in Firefox)</li>
-    <li>Opera 12.17 (last version based on Opera's own Presto engine):
-      not supported (<code>details</code> always open; no disclosure widget;
-      it is not clear which key on the keyboard would cycle through the <code>summary</code> elements
-      except <kbd>d</kbd>, which cycles through at least all block-level elements on the page)
-    </li>
-  </ul>
-  <p>Tests 5 July 2015 (<abbr>GNU</abbr>/Linux Fedora 21 with GNOME, 64 bits):</p>
-  <ul>
-    <li>Google Chrome 43.0.2357.130 (64-bit): fully supported (see results for Chrome on Windows 7, above).</li>
-    <li>Firefox 33.1: 
-        not supported (see results for Firefox on Windows 7, above).
-    </li>
-    <li>Web 3.14.2 (1:3.14.2-4.fc21, based on WebKit): 
-      fully supported (same support as in Google Chrome).
-    </li>
-    <li>Midori 0.5.10 (0.5.10-1.fc21, based on WebKit): 
-      fully supported (same support as in Google Chrome).
-    </li>
-    <li>Dillo (3.0.4.1-2.fc21):
-      not supported (<code>details</code> always open; no disclosure widget;
-      Dillo's support for <abbr>HTML</abbr>5 seems very incomplete).
-    </li>
-    <li>Arora 0.11.0-9.fc21 (based on the QtWebKit engine): 
-      fully supported (same support as in Google Chrome).
-    </li>
-    <!--li>QupZilla 1.8.6-4.fc21 (based on WebKit core and Qt Framework):
-      not tested (could not be launched after installation).
-    </li-->
-  </ul>
+  
+    <h2>Without "open" attribute</h2>
+    <details>
+      <summary>Show/Hide Details</summary>
+      <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
+        You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
+        <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
+        (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
+      </p>
+    </details>
+  
+    <h2>Without "open" attribute, and tabindex=0 on summary</h2>
+    <p>Tabindex=0 makes the summary keyboard-focusable in Google Chrome 17 (2012), but not keyboard-actionable.
+      In 2015, 
+    </p>
+    <details>
+      <summary tabindex="0">Show/Hide Details</summary>
+      <p>How often have you had to write some JavaScript to create an interactive widget that shows and hides some content? 
+        You might’ve even downloaded a whole JavaScript library to achieve such an effect. Well, it’s time to rejoice! 
+        <abbr>HTML</abbr>5 provides a way to create this toggle feature with just a few lines of <abbr>HTML</abbr> and no JavaScript in sight 
+        (depending on the browser, of course, but we’ll come to that later). And so we introduce to you the <code>&lt;details&gt;</code> element.
+      </p>
+    </details>
+  
+    <h2>Nested Details</h2>
+    <details>
+      <summary>Frequently Asked Questions</summary>
+      <details>
+        <summary>Where can I access Webmail?</summary>
+        <p>Go the the <a href="http://www.hdm-stuttgart.de/"><abbr>HdM</abbr> homepage</a> and follow the link "Webmail" at the top of the page.</p>
+      </details>
+      <details>
+        <summary>Where can I find the list of teaching assistants for Media Informatics</summary>
+        <p>You can find the list in German at <a href="http://www.mi.hdm-stuttgart.de/Ueber_uns/Mitarbeiter">http://www.mi.hdm-stuttgart.de/Ueber_uns/Mitarbeiter</a>.
+        </p>
+      </details>
+    </details>
+    <h2 id="summary">Browser Support</h2>
+    <p>Tests 21 March 2012:</p>
+    <ul>
+      <li>Google Chrome 17.0.963.79m: supported for pointing devices but no keyboard access.</li>
+      <li>Opera 11.61: not supported (<code>details</code> always open; no disclosure widget)</li>
+      <li>Firefox 3.6.27: not supported (<code>details</code> always open; no disclosure widget)</li>
+      <li>SeaMonkey 2.7.2: not supported (<code>details</code> always open; no disclosure widget)</li>
+      <li>Internet Explorer 8.0.6001.18702: not supported (<code>details</code> always open; no disclosure widget)</li>
+      <li>Safari 4.0.4 (Windows XP): not supported (<code>details</code> always open; no disclosure widget)</li>
+    </ul>
+    <p>Tests 4 July 2015 (Microsoft Windows 7, 32 bits):</p>
+    <ul>
+      <li>Google Chrome 43.0.2357.130 m: fully supported, both for pointing devices and keyboard access
+        (tab to the <code>summary</code> element, then press the keyboard to open or close the details).
+      </li>
+      <li>Opera 30.0 (which uses WebKit as browser engine): 
+        same support as in Google Chrome 43.
+      </li>
+      <li>Comodo Dragon 43.3.3.185 (a Chromium-based browser): 
+        same support as in Google Chrome 43.
+      </li>
+      <li>Firefox 38.0.5: not supported (<code>details</code> always open; no disclosure widget)
+        only the <code>summary</code> element with <code>tabindex=0</code> is keyboard-focusable.
+      </li>
+      <li>SeaMonkey 2.33.1: not supported (same as in Firefox)</li>
+      <li>Internet Explorer 11.0.9600.17843: not supported (same as in Firefox)</li>
+      <li>Opera 12.17 (last version based on Opera's own Presto engine):
+        not supported (<code>details</code> always open; no disclosure widget;
+        it is not clear which key on the keyboard would cycle through the <code>summary</code> elements
+        except <kbd>d</kbd>, which cycles through at least all block-level elements on the page)
+      </li>
+    </ul>
+    <p>Tests 5 July 2015 (<abbr>GNU</abbr>/Linux Fedora 21 with GNOME, 64 bits):</p>
+    <ul>
+      <li>Google Chrome 43.0.2357.130 (64-bit): fully supported (see results for Chrome on Windows 7, above).</li>
+      <li>Firefox 33.1: 
+          not supported (see results for Firefox on Windows 7, above).
+      </li>
+      <li>Web 3.14.2 (1:3.14.2-4.fc21, based on WebKit): 
+        fully supported (same support as in Google Chrome).
+      </li>
+      <li>Midori 0.5.10 (0.5.10-1.fc21, based on WebKit): 
+        fully supported (same support as in Google Chrome).
+      </li>
+      <li>Dillo (3.0.4.1-2.fc21):
+        not supported (<code>details</code> always open; no disclosure widget;
+        Dillo's support for <abbr>HTML</abbr>5 seems very incomplete).
+      </li>
+      <li>Arora 0.11.0-9.fc21 (based on the QtWebKit engine): 
+        fully supported (same support as in Google Chrome).
+      </li>
+      <!--li>QupZilla 1.8.6-4.fc21 (based on WebKit core and Qt Framework):
+        not tested (could not be launched after installation).
+      </li-->
+    </ul>
+  </main>
+
+  <footer>
+    <!-- nothing here at the moment -->
+  </footer>
 </body>
 </html>
