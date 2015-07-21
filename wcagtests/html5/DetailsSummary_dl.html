@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!-- Encoded as UTF-8 without BOM -->
+  <title>Test for details and summary</title>
+  <link rel="stylesheet" type="text/css" href="details.css" />
+</head>
+<body>
+  <h1>Test for <code>details</code> and <code>summary</code></h1>
+  <p>Links to <a href="HTML5_SummaryDetailsTest.html">other examples</a>.</p>
+
+  <h2>Examples</h2>
+
+  <h3>Example combining <code>details</code> and a definition list (<code>dl</code>)</h3>
+
+  <p>The example below wraps the <code>details</code> element with a <code>dl</code> element, while the <code>dt</code> element is inside the <code>summary</code> element;
+    the <code>summary</code> element is followed by <code>dd</code> elements. For correct rendering, the <code>dt</code> element needs the <abbr>CSS</abbr> declaration
+    <code class="CSS">display: inline</code>.
+  </p>
+  <dl>
+    <details>
+      <summary><dt>Fork</dt></summary>
+      <dd>(Traffic) A <em>fork</em> (literally "fork in the road") is a type of intersection. When a road splits, the main road steers to the left or right, depending of what side you drive on, and the smaller road heads straight. <cite>(Source: Wikipedia: "Intersection (road)".)</cite></dd>
+      <dd>(Chess) A <em>knot</em> is a move that uses one piece to attack two or more of the opponent's pieces simultaneously, hoping to achieve material advantage, since the opponent can only counter one of the two threats. <cite>(Source: Wikipedia: "Chess tactic".)</cite></dd>
+    </details>
+    <details>
+      <summary><dt>Skewer</dt></summary>
+      <dd>(Cooking) A skewer is a thin metal or wood stick used to hold pieces of food together. <cite>(Source: Wikipedia: "Skewer".)</cite></dd>
+      <dd>(Chess) A skewer is a move which attacks two pieces in a line, similar to a pin, except that the enemy piece of greater value is in front of the piece of lesser value. After the more valuable piece moves away, the lesser piece can be captured. Queens, rooks, and bishops can perform the skewer. <cite>(Source: <a href="https://en.wikipedia.org/wiki/Chess_tactic#Skewer">Wikipedia: "Chess tactic"</a>.)</cite></dd>
+    </details>
+  </dl>
+
+  <p>Findings:</p>
+  <ul>
+    <li>In Google Chrome 20.0.1132.47 and Comodo Dragon 20.0 (based on Chromium 20.0.1132.47), both on Windows 7 32-bit, 
+      only the first <code>summary</code> gets focus; the link inside the second (closed) <code>details</code> element does not get focus. 
+    </li>
+    <li>Adding <code>open="open"</code> to the first <code>summary</code> element does not make a difference.</li>
+    <li>Adding <code>open="open"</code> to both <code>summary</code> elements does not make a difference, either! 
+      Nor the second <code>summary</code> element nor the link inside it receive (tab) focus.
+    </li>
+    <li>Using <code>open</code> instead of <code>open="open"</code> gives the same results.</li>
+  </ul>
+
+<p>Page created <time>2012-07-05</time>.</p>
+</body>
+</html>

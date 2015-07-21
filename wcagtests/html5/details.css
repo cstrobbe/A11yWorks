@@ -1,0 +1,16 @@
+
+body { margin: 20 px; font-family: 'Trebuchet MS', Verdana, Helvetica, sans-serif; }
+table { border-collapse: collapse; }
+th, td { border: 1px solid #666; padding: 0.1em; }
+strong.good { color: green; }
+strong.bad { color: red; }
+
+details > p { margin-left: 1em; }
+/* details { display: block;  border: 1px dotted #999; background-color: yellow; color: inherit; }*/
+
+/* CSS code: see http://www.w3.org/TR/html5/the-details-element.html#dom-details-open */
+details > summary { transition: color 1s; color: green; }
+details[open=open] > summary, details[open] > summary  { color: red; }
+summary dt { display: inline; }
+details ul { margin: 0; }
+

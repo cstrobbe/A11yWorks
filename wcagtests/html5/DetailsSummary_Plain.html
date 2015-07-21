@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!-- Encoded as UTF-8 without BOM -->
+  <title>Test for details and summary</title>
+  <link rel="stylesheet" type="text/css" href="details.css" />
+</head>
+<body>
+  <h1>Test for <code>details</code> and <code>summary</code></h1>
+  <p>Links to <a href="HTML5_SummaryDetailsTest.html">other examples</a>.</p>
+
+  <h2>Examples</h2>
+
+  <h3>Example without the <code>open</code> attribute</h3>
+  <p>The example below should render with a disclosure widget next to "Knot", and the widget should be collapsed.</p>
+  <details>
+    <summary>Knot</summary>
+	<p>A <em>knot</em> is a unit of speed equaling 1 nautical mile per hour (1.15 miles per hour or 1.852 kilometers per hour).</p>
+  </details>
+  <p>The above example </p>
+  <ul>
+    <li>Works in <strong class="good">Google Chrome 19.0.1084.52 m</strong> on Windows XP: both with the mouse and the keyboard; it is possible to tab to "Knot" and open and close the widget with Enter.</li>
+    <li>Works in <strong class="good">Comodo Dragon 19.0.1084.56</strong> on Windows 7: both with the mouse and the keyboard; it is possible to tab to "Knot" and open and close the widget with Enter.</li>
+    <li>Does not do anything in <strong class="bad">Internet Explorer 8.0.6001.18702</strong> on Windows XP or <strong class="bad">Internet Explorer 9.0.8112.16421</strong> in Windows 7; no keyboard access; in addition, neither the <code>details</code> nor the <code>summary</code> cause a new line.</li>
+    <li>Does not do anything in <strong class="bad">Firefox 12.0</strong> on Windows XP and Windows 7; no keyboard access; in addition, neither the <code>details</code> nor the <code>summary</code> cause a new line.</li>
+    <li>Does not do anything in <strong class="bad">SeaMonkey 2.9.1</strong> on Windows XP or <strong class="bad">SeaMonkey 2.10</strong> on Windows 7; no keyboard access; in addition, neither the <code>details</code> nor the <code>summary</code> cause a new line.</li>
+    <li>Does not do anything in <strong class="bad">Opera 11.64 (build 1403)</strong> on Windows XP and Windows 7; no keyboard access (the <a href="http://help.opera.com/Windows/11.60/en/keyboard.html">shortcuts</a> <kbd>Tab</kbd>, <kbd>Ctrl + ↓</kbd>, <kbd>Ctrl + ↑</kbd>, <kbd>Shift + ↓</kbd>, <kbd>Shift + ↑</kbd> cannot be used to reach the <code>summary</code>); in addition, neither the <code>details</code> nor the <code>summary</code> cause a new line.</li>
+    <li>Does not do anything in <strong class="bad">Safari 4.0.4</strong> on Windows XP or <strong class="bad">Safari 5.1.7</strong> on Windows 7; no keyboard access. (What keys should be used in Safari on Windows for keyboard navigation? The <code>tab</code> key does not cycle through links.)</li>
+  </ul>
+  <p>Note: Google Chrome, Comodo Dragon (which is based on Chromium) and Safari render <code>details</code> as a 
+    <a href="http://www.w3.org/TR/html5/content-models.html#paragraph">paragraph</a> 
+    (or <a href="http://www.w3.org/TR/html401/struct/global.html#didx-block-level">block-level element</a> in <abbr>HTML</abbr> 4.01 parlance). 
+  </p>
+
+  <h3>Example with the <code>open</code> attribute</h3>
+  <p>The example below should render with a disclosure widget next to "Knot", and the widget should be expanded.</p>
+
+  <details open="open">
+    <summary>Fork</summary>
+    <p>(Chess): A <em>knot</em> is a move that uses one piece to attack two or more of the opponent's pieces simultaneously, hoping to achieve material advantage, since the opponent can only counter one of the two threats. (Source: Wikipedia: Chess tactic.)</p>
+  </details>
+
+  <p>The above example leads to the same results as the example without the <code>open</code> attribute.</p>
+  <p><strong>Note:</strong> the second example is not keyboard accessible in Google Chrome and Comodo Dragon (on Windows 7) 
+    unless the first example is commented out or removed!?
+  </p>
+
+<p>Page created <time>2012-07-05</time>.</p>
+</body>
+</html>

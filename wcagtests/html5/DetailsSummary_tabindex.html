@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!-- Encoded as UTF-8 without BOM -->
+  <title>Test for details and summary</title>
+  <link rel="stylesheet" type="text/css" href="details.css" />
+</head>
+<body>
+  <h1>Test for <code>details</code> and <code>summary</code></h1>
+  <p>Links to <a href="HTML5_SummaryDetailsTest.html">other examples</a>.</p>
+
+  <h2>Examples</h2>
+
+  <h3>Examples with <code>tabindex</code></h3>
+  <p>Without the <code>open</code> attribute:</p>
+  <details>
+    <summary tabindex="0">Knot</summary>
+    <p>A <em>knot</em> is a unit of speed equaling 1 nautical mile per hour (1.15 miles per hour or 1.852 kilometers per hour).</p>
+  </details>
+  
+  <p>With the <code>open</code> attribute:</p>
+  <details open="open" tabindex="0">
+    <summary>Knot</summary>
+	<p>A <em>knot</em> is a unit of speed equaling 1 nautical mile per hour (1.15 miles per hour or 1.852 kilometers per hour).</p>
+  </details>
+  
+  <p>Findings (on Windows 7, 32-bit version):</p>
+  <ul>
+    <li>The <code>tabindex="0"</code> makes the <code>details</code> element keyboard navigable in 
+      Internet Explorer 9.0.8112.16421, 
+      Firefox 12.0,
+      Opera 11.64 (with the <kbd>Tab</kbd> key; on focus a blue outline is created around the <code>summary</code> element (just the width of the word) when
+      <code>details</code> has no <code>open</code> attribute, and around the <code>details</code> element when when that element has an <code>open</code> attribute), 
+      SeaMonkey 2.1.0.1, 
+      Safari 5.1.7 (with the <kbd>Tab</kbd> key, and a blue outline is created around the <code>summary</code> element (full width of the paragraph) in
+      the <code>details</code> element without the <code>open</code> attribute, and around the <code>details</code> element when the <code>open</code>
+      attribute is present)
+    </li>
+    <li>&hellip; but that does not make these browsers "support" <code>details</code> and <code>summary</code>: closing and expanding is still impossible;
+      <code>details</code> always remains open.
+    </li>
+  </ul>
+
+<p>Page created <time>2012-07-05</time>.</p>
+</body>
+</html>

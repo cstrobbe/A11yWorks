@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!-- Encoded as UTF-8 without BOM -->
+  <title>Test for details and summary</title>
+  <link rel="stylesheet" type="text/css" href="details.css" />
+</head>
+<body>
+  <h1>Tests for <code>details</code> and <code>summary</code></h1>
+  <p>Links to <a href="HTML5_SummaryDetailsTest.html">other examples</a>.</p>
+
+  <h2>Examples</h2>
+  <p>The example below wraps the <code>details</code> element with a <code>dl</code> element, while the <code>dt</code> element is inside the <code>summary</code> element;
+    the <code>summary</code> element is followed by <code>dd</code> elements. 
+    The <code>summary</code> uses the attributes <code>tabindex="0"</code> and <code>aria-describedby</code>.</p>
+    For correct rendering, the <code>dt</code> element needs the <abbr>CSS</abbr> declaration <code class="CSS">display: inline</code>.
+  <dl>
+    <details>
+      <summary tabindex="0" aria-describedby="DefForkTraffic DefForkChess"><dt>Fork</dt></summary>
+      <dd id="DefForkTraffic">(Traffic) A <em>fork</em> (literally "fork in the road") is a type of intersection. When a road splits, the main road steers to the left or right, depending of what side you drive on, and the smaller road heads straight. <cite>(Source: Wikipedia: "Intersection (road)".)</cite></dd>
+      <dd id="DefForkChess">(Chess) A <em>knot</em> is a move that uses one piece to attack two or more of the opponent's pieces simultaneously, hoping to achieve material advantage, since the opponent can only counter one of the two threats. <cite>(Source: Wikipedia: "Chess tactic".)</cite></dd>
+    </details>
+    <details>
+      <summary tabindex="0" aria-describedby="DefSkewerCooking DefSkewerChess"><dt>Skewer</dt></summary>
+      <dd id="DefSkewerCooking">(Cooking) A skewer is a thin metal or wood stick used to hold pieces of food together. <cite>(Source: Wikipedia: "Skewer".)</cite></dd>
+      <dd id="DefSkewerChess">(Chess) A skewer is a move which attacks two pieces in a line, similar to a pin, except that the enemy piece of greater value is in front of the piece of lesser value. After the more valuable piece moves away, the lesser piece can be captured. Queens, rooks, and bishops can perform the skewer. <cite>(Source: <a href="https://en.wikipedia.org/wiki/Chess_tactic#Skewer">Wikipedia: "Chess tactic"</a>.)</cite></dd>
+    </details>
+  </dl>
+
+<p>Page created <time>2012-07-05</time>.</p>
+</body>
+</html>
