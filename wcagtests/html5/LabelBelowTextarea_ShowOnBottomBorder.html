@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Test Page for Label Below Textarea</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="author" content="Christophe Strobbe" />
+  <style type="text/css">
+    .fortextareahidden { display: block; }
+    textarea.fortextareahidden { margin-left: 0.5em; }
+    label.fortextareahidden { margin-left: 1em; text-align: left; }
+
+    label[for="Textarea2"] { 
+      width: 40%;
+      margin-bottom: -1.4em;
+      /*color: transparent;*/ background-color: transparent;
+    }
+
+    /* Inspired by Chris Coyier's "Float Labels with CSS": https://css-tricks.com/float-labels-css/ */
+    p#Textarea3Container {
+      height: 6em;
+    }
+    label[for="Textarea3"] { 
+      margin-top: -5em; color: gray; background-color: transparent;
+    }
+    textarea#Textarea3:focus + label {
+      color: white;
+      margin-top: -1.4em; 
+    }
+    textarea#Textarea3:focus {
+      border-bottom: 1.7em solid blue;
+      margin-bottom: -1.6em;
+      height: 4em;
+      resize: none;
+    }
+    textarea#Textarea3 {
+      height: 5.6em;
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1><span class="h1txt">Test Page for Label Below Textarea</span></h1>
+    <!-- 
+    <p class="skiplink"><a class="skiplink" href="#main">Skip to main content</a></p>
+    -->
+  </header>
+
+  <main id="main">
+    <form accept-charset="UTF-8" action="LabelBelowTextarea_ShowOnBottomBorder.html" autocomplete="off" enctype="text/plain" method="post" name="testform" id="testform">
+      <!-- 
+        <p><label for="message" class="fortextarea">Label above textarea:&nbsp;</label>
+          <textarea cols="70" rows="10" id="message" name="message"></textarea>
+        </p>
+        <p><label for="Textarea2" class="fortextareahidden">Label above textarea2&nbsp;</label>
+          <textarea class="fortextareahidden" cols="70" rows="5" id="Textarea2" name="Textarea2"></textarea>
+        </p>
+      -->
+        <p id="Textarea3Container">
+          <textarea class="fortextareahidden" cols="70" rows="5" id="Textarea3" name="Textarea3"></textarea>
+          <label for="Textarea3" class="fortextareahidden">Label below textarea3&nbsp;</label>
+        </p>
+      <!-- 
+      <div class="fieldset buttons">
+        <p>
+          <button type="submit" id="contact-submit-button">Submit form</button>
+          <button type="reset" id="contact-clear-button">Clear form</button>
+        </p>
+      </div>
+      -->
+    </form>
+  </main>
+
+  <!-- 
+  <footer>
+  </footer>
+  -->
+</body>
+</html>
