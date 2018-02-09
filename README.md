@@ -2,5 +2,9 @@
 
 Repository of documents and test files related to accessibility.
 
-Licence for the content: Creative Commons [CC BY-SA 4.0](LICENCE.html).
+## Licence and Copyright
+
+Copyright: Christophe Strobbe, 2015 – 2018.
+
+Licence for the content: Creative Commons Attribution Share-Alike [CC BY-SA 4.0](LICENCE.html).
 
