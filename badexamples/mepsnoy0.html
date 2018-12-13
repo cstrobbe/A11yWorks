@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+  <title>test</title>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#175506">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+
+<body>
+  <div class="header">
+    <h1>test</h1>
+    <p>Check if your browser is relatively secure</p>
+  </div>
+
+  <table>
+    <tr>
+      <td>Browser</td>
+      <td id="browser"></td>
+      <td>The best way to make sure your browser is relatively secure is to <a href="https://updatemybrowser.org" target="_blank" rel="noopener noreferrer">keep it up to date</a>.</td>
+    </tr>
+    <tr>
+      <td>Plugins</td>
+      <td id="plugins"></td>
+      <td>More plugins = bigger attack area</td>
+    </tr>
+    <tr>
+      <td>Fonts</td>
+      <td id="fonts"></td>
+      <td>The more fonts you have, the chance that your browser has a unique configuration increases, alongside its <a href="https://panopticlick.eff.org/static/browser-uniqueness.pdf" target="_blank" rel="noopener noreferrer"> entropy (according to EFF)</a>.</td>
+    </tr>
+    <tr>
+      <td>Monitor size</td>
+      <td id="monitorSize"></td>
+      <td rowspan="4">Useful for fingerprinting.</td>
+    </tr>
+    <tr>
+      <td>Browser size</td>
+      <td id="browserSize"></td>
+    </tr>
+    <tr>
+      <td>This screen is a</td>
+      <td id="touchscreen"></td>
+    </tr>
+    <tr>
+      <td>Adblocking is</td>
+      <td id="block_me"></td>
+    </tr>
+    <tr>
+      <td>Flash is</td>
+      <td id="flash"></td>
+      <td><a href="https://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html" target="_blank" rel="noopener noreferrer">Flash is bad, mkay?</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://en.wikipedia.org/wiki/Do_Not_Track" target="_blank" rel="noopener noreferrer">Do Not Track</a> is</td>
+      <td id="dnt"></td>
+      <td>From a security (not privacy) standpoint, as the number of third-party connections increases, so does the chance that one of them is malicious. Also, less connections equals less network usage, making things speedier.</td>
+    </tr>
+    <tr>
+      <td>Referrer</td>
+      <td id="referrer"></td>
+      <td>A referrer is the page from which you arrived at the current page. Now what if you arrived here from your bank's website and your bank included sensitive info in the URL? It's not that uncommon. <a href="https://blog.avatao.com/How-I-could-steal-your-photos-from-Google/" target="_blank" rel="noopener noreferrer">Google has similar problems</a> from time to time.</td>
+    </tr>
+  </table>
+
+  <div class="flex-container">
+    <p><strong>This is not the only information that your browser gives away!</strong> More ways to check your browser:</p>
+    <ul>
+      <li><a href="https://browserleaks.com" target="_blank" rel="noopener noreferrer">browserleaks</a></li>
+      <li><a href="https://panopticlick.eff.org" target="_blank" rel="noopener noreferrer">panopticlick</a></li>
+      <li><a href="https://dnsleaktest.com" target="_blank" rel="noopener noreferrer">dnsleaktest</a></li>
+      <li><a href="https://ipleak.net" target="_blank" rel="noopener noreferrer">ipleak</a></li>
+      <li><a href="https://ip-check.info/?lang=en" target="_blank" rel="noopener noreferrer">ip-check</a></li>
+      <li><a href="http://browserspy.dk" target="_blank" rel="noopener noreferrer">browserspy</a></li>
+      <li><a href="https://amiunique.org/fp" target="_blank" rel="noopener noreferrer">amiunique</a></li>
+      <li><a href="https://tenta.com/test" target="_blank" rel="noopener noreferrer">tenta</a></li>
+    </ul>
+  </div>
+</body>
+
+</html>
+<!-- https://jsfiddle.net/mepsnoy0/ -->
