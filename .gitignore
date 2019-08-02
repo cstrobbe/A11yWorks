@@ -1,10 +1,11 @@
+*.bak
+*.draft
 *.md~1~
+*.html~
 *.html~1~
 *.html~2~
-*.bak
 *.html~3~
-*.css~1~
 *.html~4~
-*.css~2~
 *.html~5~
-*.draft
+*.css~1~
+*.css~2~
