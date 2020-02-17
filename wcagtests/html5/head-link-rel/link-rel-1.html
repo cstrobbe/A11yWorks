@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <title>Page One &mdash; Test Site for the rel Attribute</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="top" href="index.html" title="Home page" />
+  <link rel="next" href="link-rel-2.html" title="Page Two" />
+  <link rel="last" href="link-a-4.html" title="Page Eight" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../../css/verdemoderna.css" title="default" />
+</head>
+<body>
+  <header id="header">
+    <h1><span class="h1txt">Page One &mdash; Test Site for the <code>rel</code> Attribute</span></h1>
+  </header>
+
+  <main id="main">
+    <p>Test for the <code>rel</code> attribute on the <code>link</code> element (inside <code>head</code>).</p>
+    <p>This page uses the following <code>link</code> elements:</p>
+    <pre><code>    &lt;link rel="top" href="index.html" title="Home page" />
+    &lt;link rel="next" href="link-rel-2.html" title="Page Two" />
+    &lt;link rel="last" href="link-a-4.html" title="Page Eight" /></code></pre>
+
+    <p>Using the <code>rel</code> attribute on the <code>link</code> element used to be supported by Netscape Navigator (long defunct)
+      and is still supported by its successor
+      <a href="https://www.seamonkey-project.org/">SeaMonkey</a>.
+      If <code>link</code> elements for navigation are present in the <code>head</code> element, SeaMonkey can display a
+      &ldquo;Website Navigation Bar&rdquo;.
+    </p>
+    <p>The above links can be made visible in SeaMonkey: go to <samp>View</samp>, then <samp>Show/Hide</samp>, then, under <samp>Website Navigation Bar</samp>,
+      choose one of the tree available options: <samp>Show Always</samp>, <samp>Show Only As Needed</samp> or <samp>Hide Always</samp>.
+      See the screenshot below:
+      <br /><img src="seamonkey_View_Display-WebsiteNavigationBar.png" alt="SeaMonkey's display options for the Website Navigation Bar, as described above" />
+    </p>
+    <p>When the user has chosen to make the Website Navigation Bar visible, SeaMonkey's toolbars look as follows (while the current page):
+      <br /><img src="seamonkey_link_WebsiteNavigationBar.png" alt="Partial screenshot of SeaMonkey displaying, from top to bottom, the title bar, the menu bar, the URL bar, the bookmarks toolbar and the Website Navigation Bar" />
+      <br />After parsing the <code>link</code> elements in the <code>head</code>, the Website Navigation Bar displays
+      clickable buttons for &ldquo;Top&rdquo;, &ldquo;Next&rdquo; and &ldquo;Last&rdquo;.
+      All other buttons on the navigation bar are grayed out, <abbr>i.e.</abbr> the buttons for
+      &ldquo;Up&rdquo;, &ldquo;First&rdquo;, &ldquo;Previous&rdquo;, &ldquo;Document&rdquo;, &ldquo;More&rdquo; and &ldquo;Subscribe&rdquo;.
+    </p>
+    <p>Unfortunately, this navigation bar cannot be accessed using the <kbd>Tab</kbd> key
+      and there is no documentation on how to reach the navigation bar using only the keyboard.
+      This makes the Website Navigation Bar inaccessible to blind users and other keyboard-only users.
+    </p>
+  </main>
+
+  <footer id="footer">
+    <p id="licence">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License Attribution-ShareAlike" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text">
+    <a href="http://cstrobbe.github.io/A11yWorks/">Accessibility
+    Works</a></span> by <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://github.com/cstrobbe"
+    rel="cc:attributionURL">Christophe Strobbe</a> is licensed under a <a
+    xml:lang="en-US" lang="en-US" rel="license"
+    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+    Attribution-ShareAlike 4.0 International License</a>. </p>
+
+    <p>You can <a href="https://github.com/cstrobbe/A11yWorks">fork
+    the code</a> on GitHub.</p>
+  </footer>
+</body>
+</html>
