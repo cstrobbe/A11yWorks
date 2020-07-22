@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#">
+<head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <title>Test Pages for textarea and label</title>
+  <link rel="top" href="../../../index.html" title="Accessibility Works: Home page" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../../css/verdemoderna.css" title="default" />
+  <meta name="robots" content="noindex, nofollow" />
+  <style type="text/css">
+    textarea { display: block; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <h1><span class="h1txt">Test Pages for <code>textarea</code> and <code>label</code></span></h1>
+  </header>
+
+  <main id="main">
+    <p>This page contains examples of <code>textarea</code> elements with <code>label</code> elements,
+      sometimes explicitly connected with each other, sometimes not.
+      Question: If the <code>label</code> element is wrapped around the <code>textarea</code> element,
+      does the <code>textarea</code> element's content become part of the accessible name?
+      This is not entirely obvious when reading the
+      <a href="https://www.w3.org/TR/html-aam-1.0/#accessible-name-and-description-computation">accessible name and description computation algorithm</a>.
+      In addition, implementation in screen readers may vary.
+    </p>
+    <p><code>textarea</code> element inside a <code>form</code> element:</p>
+    <form action="index.html" method="post" enctype="multipart/form-data" name="freetext">
+      <p><label for="freetext-1">Label explicitly associated</label>
+        <textarea id="freetext-1" cols="40" rows="2"></textarea>
+      </p>
+      <p><label for="freetext-2">Label explicitly associated</label>
+        <textarea id="freetext-2" cols="40" rows="2">freetext-2 data</textarea>
+      </p>
+      <p><label>Label wraps around texarea
+        <textarea id="freetext-3" cols="40" rows="2"></textarea>
+        </label>
+      </p>
+      <p><label>Label wraps around texarea
+        <textarea id="freetext-4" cols="40" rows="2">freetext-4 data</textarea>
+        </label>
+      </p>
+    </form>
+  
+    <p><code>textarea</code> element inside a <code>div</code> element with <code>aria-label</code>
+    instead of a <code>form</code> element:</p>
+    <div aria-label="a random aria-label">
+      <p><label for="divtext-1">Label explicitly associated</label>
+        <textarea id="divtext-1" cols="40" rows="2"></textarea>
+      </p>
+      <p><label for="divtext-2">Label explicitly associated</label>
+        <textarea id="divtext-2" cols="40" rows="2">divtext-2 data</textarea>
+      </p>
+      <p><label>Label wraps around texarea
+        <textarea id="divtext-3" cols="40" rows="2"></textarea>
+        </label>
+      </p>
+      <p><label>Label wraps around texarea
+        <textarea id="divtext-4" cols="40" rows="2">divtext-4 data</textarea>
+        </label>
+      </p>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <p id="licence">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License Attribution-ShareAlike" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text">
+    <a href="http://cstrobbe.github.io/A11yWorks/">Accessibility
+    Works</a></span> by <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://github.com/cstrobbe"
+    rel="cc:attributionURL">Christophe Strobbe</a> is licensed under a <a
+    xml:lang="en-US" lang="en-US" rel="license"
+    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+    Attribution-ShareAlike 4.0 International License</a>. </p>
+
+    <p>You can <a href="https://github.com/cstrobbe/A11yWorks">fork
+    the code</a> on GitHub.</p>
+  </footer>
+</body>
+</html>
