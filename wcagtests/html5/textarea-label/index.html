@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#">
+<html lang="en" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#">
 <head>
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
   <title>Test Pages for textarea and label</title>
@@ -17,7 +17,7 @@
 
   <main id="main">
     <p>This page contains examples of <code>textarea</code> elements with <code>label</code> elements,
-      sometimes explicitly connected with each other, sometimes not.
+      sometimes explicitly associated with each other, sometimes not.
       Question: If the <code>label</code> element is wrapped around the <code>textarea</code> element,
       does the <code>textarea</code> element's content become part of the accessible name?
       This is not entirely obvious when reading the
@@ -60,6 +60,70 @@
         </label>
       </p>
     </div>
+
+    <p>Findings from 22 July 2020:</p>
+    <ul>
+      <li>When tabbing through the page using Firefox 78.02 and <abbr>NVDA</abbr> 2019.3.1 (Windows 10),
+        the labels are always read as expected. Text inside the <code>textarea</code>
+        elements is read in a slightly different voice than the labels.
+        <abbr>NVDA</abbr> does not read the value of the <code>aria-label</code> attribute on the <code>div</code> element.
+      </li>
+      <li>When tabbing through the page using Microsoft Edge and <abbr>NVDA</abbr> 2019.3.1 (Windows 10),
+        the labels are always read as expected. Text inside the <code>textarea</code>
+        elements is read in a slightly different voice than the labels.
+        <abbr>NVDA</abbr> also reads the value of the <code>aria-label</code> attribute on the <code>div</code> element.
+      </li>
+      <li>When tabbing through the page using Google Chrome 84.0.4147.89 and <abbr>NVDA</abbr> 2019.3.1 (Windows 10),
+        the labels are always read as expected. Text inside the <code>textarea</code>
+        elements is read in a slightly different voice than the labels.
+        <abbr>NVDA</abbr> does not read the value of the <code>aria-label</code> attribute on the <code>div</code> element.
+        <br />(In fields where Chrome detects spelling errors (visible as red wavy lines below the relevant words),
+        <abbr>NVDA</abbr> also announces the spelling error before reading the relevant word containing the error.
+      </li>
+      <li>When tabbing through the page using Firefox 78.02 and Windows Narrator (Windows 10),
+        the labels are always read as expected.
+        Narrator does not read the value of the <code>aria-label</code> attribute on the <code>div</code> element.
+        <br />(After initially loading the page, Narrator starts reading the entire page from top to bottom;
+        each of the labels is read twice.)
+      </li>
+      <li>When tabbing through the page using Google Chrome 84.0.4147.89 and Windows Narrator (Windows 10),
+        the labels are always read as expected.
+        Narrator does not read the value of the <code>aria-label</code> attribute on the <code>div</code> element.
+        <br />(After initially loading the page, Narrator starts reading the entire page from top to bottom;
+        each of the labels is read twice.)
+      </li>
+      <li>When tabbing through the page using Microsoft Edge and Windows Narrator (Windows 10),
+        the labels are always read as expected.
+        Narrator also reads the value of the <code>aria-label</code> attribute on the <code>div</code> element.
+        <br />(After initially loading the page, Narrator does not start reading the entire page from top to bottom.)
+      </li>
+    </ul>
+
+    <p>See also:</p>
+    <ul>
+      <li>
+        <a href="https://www.w3.org/WAI/tutorials/forms/labels/">Labeling Controls</a>,
+        <i class="website">Web Accessibility Tutorials, <abbr>W3C</abbr> Web Accessibility Initiative</i>.
+      </li>
+      <li>
+        <a href="https://webaim.org/articles/label-name/">Decoding Label and Name for Accessibility</a>,
+        <i class="website">Web<abbr>AIM</abbr></i>, 28.02.2020 (latest update).
+      </li>
+      <li>
+        <a href="https://dequeuniversity.com/rules/axe/3.5/label?application=axeAPI">Form &lt;input&gt; elements must have labels</a>,
+        <i class="website">Deque University</i>.
+      </li>
+      <li>
+        <a href="https://ux.stackexchange.com/questions/35289/input-checkboxes-wrapped-inside-labels">Input checkboxes wrapped inside &lt;labels&gt;</a>,
+        <i class="website">User Experience Stack Exchange</i>, question submitted on 22.02.2013.
+      </li>
+      <li>
+        <a href="https://stackoverflow.com/questions/774054/should-i-put-input-elements-inside-a-label-element">Should I put input elements inside a label element?</a>,
+        <i class="website">Stack Overflow</i>, question submitted on 21.04.2009.
+        Most of the answers don't take accessibility into account.
+      </li>
+    </ul>
+
   </main>
 
   <footer id="footer">
