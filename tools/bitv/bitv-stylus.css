@@ -1,0 +1,182 @@
+/* SC 1.1.1a & 1.1.1b: */
+/*
+img, a img, a svg, button img, button[alt], button[type="image"], button[style^=background-image], img[onlick] { border: 3px dotted lime; padding: 3px;}
+img[alt] { border: 3px solid green; }
+img:not([alt]), img[alt=""], img[alt=" "] { border: 3px solid red; }
+*/
+
+/* img:not([alt]):before { content: "??"; }
+img[alt=""]::before { content: "leer "; }
+a, button { visibility: hidden; } */
+/*Hide all images:*/
+/*img, svg { visibility: hidden; }*/
+
+/* SC 1.2.1: video and audio */
+/*
+video, audio, div.youtube-layer { border: 4px solid lime; }
+*/
+
+/* SC 1.3.1a & SC 2.4.6a: heading elements */
+/*
+h1, h2, h3, h4, h5, h6 { background-color:#AAA; outline: 2px solid yellow;}
+h1::before { content: "h1: "; font-size: 1rem; border: 2px dotted gold; border-radius: 4px; background-color: black; color: white; }
+h2::before { content: "h2: "; font-size: 1rem; border: 2px dotted gold; border-radius: 4px; background-color: black; color: white;  }
+h3::before { content: "h3: "; font-size: 1rem; }
+h4::before { content: "h4: "; font-size: 1rem; }
+h5::before { content: "h5: "; font-size: 1rem; }
+h6::before { content: "h6: "; font-size: 1rem; }
+*/
+
+/* SC 1.3.1b: lists */
+/*
+ol::before { content: "ol: "; }
+ul::before { content: "ul: "; }
+dl::before { content: "dl: "; }
+ol, ul, dl { background-color:rgba(255, 255, 0, .2); }
+*/
+
+/* SC 1.3.1c: quotes */
+/*
+q::before { content: "Q: "; }
+blockquote::before { content: "BQ: "; }
+*/
+
+/* SC 1.3.1d: paragraph elements; emphasis etc:*/
+/*
+p, address { outline: 1px dashed gray; }
+address:before { content: "address:"; outline: 1px dashed gray; }
+
+em::before { content: "em: "; }
+strong::before { content: "strong: "; }
+b::before { content: "b: "; }
+i::before { content: "i: "; }
+em, strong, b, i { background-color:rgba(255, 255, 0, .2); }
+*/
+
+/* SC 1.3.1: tables, included nested tables */
+/*
+table::before { content: "table: "; }
+table[summary]::before { content: "summary: " attr(summary); color: red; background-color: white; }
+table { background-color:rgba(255, 255, 0, .2); }
+table th, table td { border: 1px dashed blue; }
+th table, td table { border: 2px dotted red; }
+*/
+
+/* SC 1.3.1 & SC 3.3.2: input & label [@@ input:not([id]) not working? ] */
+/*
+input:not([id]), select:not([id]), textarea:not([id]), label:not([for]) { background-color: #ff9933; border: 2px dashed red; }
+input:not([id])[aria-label] {background-color: #ccff33; }
+input[id], select[id], textarea[id], label[for] { border: 2px dotted green; }
+*/
+
+/* SC 1.3.2a: make focus more visible to check meaningful (tab) sequence: */
+/*
+a:focus, h1:focus, h2:focus, h3:focus, h4:focus, input:focus, select:focus, button:focus, textarea:focus { outline: 3px solid lime; }
+figure:focus { border: 3px dashed lime; }
+*/
+
+/* SC 1.4.1: all colours black on white to check that nothing relies on colour differences */
+/*
+body *, body * a:link { color: black; background-color: white; }
+*/
+
+/* SC 1.4.3: check whether colours have been defined for each element */
+/*
+html { background-color:black; color:white; }
+*/
+
+/* SC 1.4.11 / BITV 1.4.11a: */
+/*
+body {background-color:black; color:white;}
+*/
+
+/* SC 1.4.12: text spacing */
+/*
+p, li, th, td, pre {
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+    line-height: 1.5;
+}
+li p {
+    line-height: 1.0;
+}
+p, li {
+    margin-bottom: 2rem;
+}
+*/
+
+/* SC 2.1.1 / SC 2.4.3: */
+/*
+div:focus, table:focus, a:focus, input:focus, textarea:focus, select:focus, button:focus { outline: 3px dotted lime !important; background-color:#ffff99 !important; color: black; }
+*/
+/*a:hover { background-color: #ffff99;}
+input:not([id]) { background-color: lime; }
+*/
+
+/* SC 2.1.4: highlight elements with accesskeys; display accesskey for links: */
+/*
+a[accesskey], input[accesskey] { border: 3px dotted gold; padding: 3px; }
+a[accesskey]:before { content: 'accesskey: ' attr(accesskey); color: red; background-color: #eee; position: relative; margin-top: -1rem; text-align: right; }
+*/
+
+/* SC 2.4.1 */
+/*
+main, nav, header, footer { margin: 2px; }
+main { border: 2px dashed blue; padding: 2px; }
+nav { border: 2px dashed green;}
+header, footer { border: 2px dashed red;}
+main::before { content: "main"; color: red; background: yellow; font-size: 1rem; }
+nav::before { content: "nav"; color: red; background: yellow; font-size: 1rem; }
+header::before { content: "header"; color: red; background: yellow; font-size: 1rem; }
+footer::before { content: "footer"; color: red; background: yellow; font-size: 1rem; }
+article::before, *[role=article]::before { content: "📰"; }
+article[role=article]::before { content: "📰📰"; border: 2px dotted red; }
+*/
+
+/* SC 2.4.4: display only links: */ 
+/* :not(a) { visibility: hidden; } 
+a { visibility: visible; color: black; background: transparent; } */
+
+/* SC 2.4.6: find iframe with/without title attribute: */
+/*
+iframe { border: 4px dotted lime; }
+iframe::before { content: "ifr: " attr(title); color: red; background-color: white; border: 1px dotted red;
+    margin-top: -10px; margin-left: -5rem; }
+*/
+
+/* SC 2.5.3a: display aria-labels, highlight elements with aria-labelledby: */
+/*
+*[aria-label]::after { content: attr(aria-label); color: red; background-color: #eee; }
+*[aria-labelledby] { outline: 2px dashed lime; }
+*/
+/* not working:
+form *[aria-label]::after { content: attr(aria-label); color: red; background-color: #eee; display: block; }
+*/
+
+/* SC 3.1.1 and 3.1.2: display xml:lang or lang attribute: */
+/*
+*[xml\:lang]::before { content: "[xml:" attr(xml\:lang) "]"; color: red; background-color: lime;  }
+*[lang]::before { content: "[" attr(lang) "]"; color: black; background-color: lime; }
+*/
+
+/* SC 4.1.2: display role and onclick attributes: */
+/*
+*[role]::before { content: "[role=" attr(role) "]"; color: black; background-color: lime; }
+div[aria-label]::before { content: "div@aria-label=" attr(aria-label); color: black; background-color: #FFE4B5; }
+*[role=timer]::before { content: "⏰"; }
+*[role=dialog]::before { content: "🗨️"; }
+*[onclick]::after { content: "[🖱️onclick]"; color: black; background-color: #FFFF33; font-size:.8rem; }
+input[required], input[aria-required] { border: 1px dashed red; }
+*/
+/* *[onclick]::after { content: "[onclick=" attr(onclick) "]"; color: black; background-color: #FFFF33; font-size:.8rem; }*/
+
+/* SC 4.1.3: display role=alert / role=alertdialog / role=dialog */
+/*
+*[role="alert"]::before, *[role="alertdialog"]::before  { content: "[role=💣" attr(role) "]"; color: black; background-color: #FFFF99; font-size: 1rem; }
+*[role="dialog"]::before { content: "[role=🗨️" attr(role) "]"; color: black; background-color: #FFFF99; font-size: 1rem; }
+*[role="alert"], *[role="alertdialog"], *[role="dialog"] { border: 2px dotted lime; }
+button { outline: 3px dotted gold; }
+button:focus { outline: 3px solid red !important; color: blue; background-color: yellow; }
+*/
+
+/* Copyright Christophe Strobbe, 2020 - ∞.*/
