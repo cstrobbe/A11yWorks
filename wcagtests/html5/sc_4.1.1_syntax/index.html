@@ -13,136 +13,144 @@
   </header>
 
   <main id="main">
-    <p>One of the most frequently misunderstood success criteria in <abbr>WCAG</abbr> 2.0 and <abbr>WCAG</abbr> 2.1 is
-      <a href="https://www.w3.org/TR/WCAG21/#parsing">success criterion 4.1.1 parsing</a>.
-      The criterion was written when
-      <a href="https://www.w3.org/TR/html4/"><abbr>HTML</abbr> 4.01</a>
-      (based on <abbr>SGML</abbr>) was still in use and <abbr>XML</abbr>-based successors had been in development for several years,
-      especially
-      <a href="https://www.w3.org/TR/xhtml1/"><abbr>XHTML</abbr> 1.0</a>
-      (a reformulation of <abbr>HTML</abbr> 4 in <abbr>XML</abbr> 1.0) and
-      <a href="https://www.w3.org/TR/xhtml2/"><abbr>XHTML</abbr> 2.0</a>.
-      Development of <abbr>XHTML</abbr> 2.0 was abandoned after <abbr>HTML</abbr> 5 turned out to be much more viable.
-      Instead of building on <abbr>SGML</abbr> or <abbr>XML</abbr>, <abbr>HTML</abbr> 5 describes
-      <a href="https://www.w3.org/TR/html52/syntax.html#parsing-html-documents">how an <abbr>HTML</abbr> parser should behave</a>
-      and what parse errors are.
-    </p>
-    <p>What distinguishes <abbr>HTML</abbr> 5 from its predecessors is that it is based neither on <abbr>SGML</abbr> nor on <abbr>XML</abbr>.
-      However, when success criterion 4.1.1 was defined for <abbr>WCAG</abbr> 2.0, it was not yet clear that <abbr>HTML</abbr>5
-      would radically break with <abbr>XML</abbr> and its clear separation between syntax
-      (<a href="https://www.w3.org/TR/xml/#dt-wfc">well-formedness constraints</a>)
-      and document type
-      (<a href="https://www.w3.org/TR/xml/#dt-vc">validity constraints</a>).
-      The wording of the success criterion is based on <abbr>XML</abbr>'s concept of well-formedness
-      but avoids that term in order to remain format agnostic and thereby more future-proof.
-    </p>
-    <p>When we read success criterion 4.1.1 with <abbr>XML</abbr> in mind, we arrive at the following meanings:</p>
-    <ul>
-      <li><q>elements have complete start and end tags</q>.
-        This says that each <em>tag</em> should be complete, not each <em>element</em>,
-        so it does not refer to missing required end tags, which would be a validation constraint.
-        Instead, it refers to <strong>missing characters in the tags themselves</strong>.
-        In fact, this is explained in the note below the success criterion.
-        <br />(Background:
-        (1) Tags are not the same as elements. Tags are the character sequences that define where an element begins and ends.
-        Elements are essentially nodes in a syntax tree.
-        (2) End tags are not required for every <abbr>HTML</abbr> element; for example,
-        they are optional for elements such as <code>html</code>, <code>head</code>,
-        <a href="https://www.w3.org/TR/html52/sections.html#the-body-element"><code>body</code></a>
-        and <code>p</code>.
-        See <a href="https://www.w3.org/TR/html52/syntax.html#optional-tags">Optional Tags</a> in the <abbr>HTML</abbr> 5.2 specification.
-        Other elements, by contrast, are not allowed to have an end tag in <abbr>HTML</abbr> 5, for example,
-        <a href="https://www.w3.org/TR/html52/semantics-embedded-content.html#elementdef-img"><code>img</code></a>,
-        <code>track</code>, <code>area</code> and
-        <a href="https://www.w3.org/TR/html52/semantics-embedded-content.html#the-source-element"><code>source</code></a>.
-        However, from an <abbr>XML</abbr> point of view, these are validation constraints, not well-formedness constraints.)
-      </li>
-      <li><q>elements are nested according to their specifications</q>.
-        This is <strong>syntactical constraint</strong> (like <abbr>XML</abbr>'s well-formedness), not a validity constraint.
-        So it is not about whether you can have a <code>p</code> element inside a <code>span</code> element, for example.
-        Instead, it is about <strong>whether elements overlap</strong>, as illustrated in the
-        <a href="https://www.w3.org/TR/xhtml1/#h-4.1">subchapter on well-formedness</a>
-        in <abbr>XHTML</abbr> 1.0. (This overlapping was already illegal in <abbr>SGML</abbr>.)
-        See also in the <abbr>HTML</abbr> 5.2 specification:
-        <a href="https://www.w3.org/TR/html52/syntax.html#misnested-tags-b-i-b-i">Misnested tags: <code>&lt;b>&lt;i>&lt;/b>&lt;/i></code></a>
-        and
-        <a href="https://www.w3.org/TR/html52/syntax.html#misnested-tags-b-p-b-p">Misnested tags: <code>&lt;b>&lt;p>&lt;/b>&lt;/p></code></a>.
-      </li>
-      <li><q>elements do not contain duplicate attributes</q>.
-        This is is another <strong>syntactical constraint</strong> and the easiest part of the success criterion.
-        Note that the <abbr>HTML</abbr> 5 specification's chapter on tokenization states that
-        <a href="https://www.w3.org/TR/html52/syntax.html#attribute-name-state">duplicate attributes</a>
-        are parse errors and that if a tag has more than one attribute with the same name, only the first one is retained in the syntax tree.
-      </li>
-      <li><q>any IDs are unique</q>.
-        This is also easy to understand, but unlike the previous requirement, this is strictly speaking a <strong>validity constraint, not a syntax constraint</strong>.
-        See <a href="https://www.w3.org/TR/xml/#id">Validity constraint: ID</a>
-        in the <abbr>XML</abbr> specification.
-        <!--See also XHTML 1.0: https://www.w3.org/TR/xhtml1/#h-4.10 -->
-        The <abbr>HTML</abbr> 5.2 specification does not discuss duplicate ID values in the chapter on parsing
-        but in the chapter on semantics:
-        <a href="https://www.w3.org/TR/html52/dom.html#element-attrdef-global-id">global attributes</a>.
-        <br />(Note that <abbr>HTML</abbr> 5 allows ID values that start with a number, whereas <abbr>XML</abbr> does not.
-        However, this is outside the scope of success criterion 4.1.1.)
-      </li>
-    </ul>
+    <section>
+      <h2>Understanding <abbr>WCAG</abbr> 2.1 Success Criterion 4.1.1</h2>
+      <p>One of the most frequently misunderstood success criteria in <abbr>WCAG</abbr> 2.0 and <abbr>WCAG</abbr> 2.1 is
+        <a href="https://www.w3.org/TR/WCAG21/#parsing">success criterion 4.1.1 parsing</a>.
+        The criterion was written when
+        <a href="https://www.w3.org/TR/html4/"><abbr>HTML</abbr> 4.01</a>
+        (based on <abbr>SGML</abbr>) was still in use and <abbr>XML</abbr>-based successors had been in development for several years,
+        especially
+        <a href="https://www.w3.org/TR/xhtml1/"><abbr>XHTML</abbr> 1.0</a>
+        (a reformulation of <abbr>HTML</abbr> 4 in <abbr>XML</abbr> 1.0) and
+        <a href="https://www.w3.org/TR/xhtml2/"><abbr>XHTML</abbr> 2.0</a>.
+        Development of <abbr>XHTML</abbr> 2.0 was abandoned after <abbr>HTML</abbr> 5 turned out to be much more viable.
+        Instead of building on <abbr>SGML</abbr> or <abbr>XML</abbr>, <abbr>HTML</abbr> 5 describes
+        <a href="https://www.w3.org/TR/html52/syntax.html#parsing-html-documents">how an <abbr>HTML</abbr> parser should behave</a>
+        and what parse errors are.
+      </p>
+      <p>What distinguishes <abbr>HTML</abbr> 5 from its predecessors is that it is based neither on <abbr>SGML</abbr> nor on <abbr>XML</abbr>.
+        However, when success criterion 4.1.1 was defined for <abbr>WCAG</abbr> 2.0, it was not yet clear that <abbr>HTML</abbr>5
+        would radically break with <abbr>XML</abbr> and its clear separation between syntax
+        (<a href="https://www.w3.org/TR/xml/#dt-wfc">well-formedness constraints</a>)
+        and document type
+        (<a href="https://www.w3.org/TR/xml/#dt-vc">validity constraints</a>).
+        The wording of the success criterion is based on <abbr>XML</abbr>'s concept of well-formedness
+        but avoids that term in order to remain format agnostic and thereby more future-proof.
+      </p>
+      <p>When we read success criterion 4.1.1 with <abbr>XML</abbr> in mind, we arrive at the following meanings:</p>
+      <ul>
+        <li><q>elements have complete start and end tags</q>.
+          This says that each <em>tag</em> should be complete, not each <em>element</em>,
+          so it does not refer to missing required end tags, which would be a validation constraint.
+          Instead, it refers to <strong>missing characters in the tags themselves</strong>.
+          In fact, this is explained in the note below the success criterion.
+          <br />(Background:
+          (1) Tags are not the same as elements. Tags are the character sequences that define where an element begins and ends.
+          Elements are essentially nodes in a syntax tree.
+          (2) End tags are not required for every <abbr>HTML</abbr> element; for example,
+          they are optional for elements such as <code>html</code>, <code>head</code>,
+          <a href="https://www.w3.org/TR/html52/sections.html#the-body-element"><code>body</code></a>
+          and <code>p</code>.
+          See <a href="https://www.w3.org/TR/html52/syntax.html#optional-tags">Optional Tags</a> in the <abbr>HTML</abbr> 5.2 specification.
+          Other elements, by contrast, are not allowed to have an end tag in <abbr>HTML</abbr> 5, for example,
+          <a href="https://www.w3.org/TR/html52/semantics-embedded-content.html#elementdef-img"><code>img</code></a>,
+          <code>track</code>, <code>area</code> and
+          <a href="https://www.w3.org/TR/html52/semantics-embedded-content.html#the-source-element"><code>source</code></a>.
+          However, from an <abbr>XML</abbr> point of view, these are validation constraints, not well-formedness constraints.)
+        </li>
+        <li><q>elements are nested according to their specifications</q>.
+          This is <strong>syntactical constraint</strong> (like <abbr>XML</abbr>'s well-formedness), not a validity constraint.
+          So it is not about whether you can have a <code>p</code> element inside a <code>span</code> element, for example.
+          Instead, it is about <strong>whether elements overlap</strong>, as illustrated in the
+          <a href="https://www.w3.org/TR/xhtml1/#h-4.1">subchapter on well-formedness</a>
+          in <abbr>XHTML</abbr> 1.0. (This overlapping was already illegal in <abbr>SGML</abbr>.)
+          See also in the <abbr>HTML</abbr> 5.2 specification:
+          <a href="https://www.w3.org/TR/html52/syntax.html#misnested-tags-b-i-b-i">Misnested tags: <code>&lt;b>&lt;i>&lt;/b>&lt;/i></code></a>
+          and
+          <a href="https://www.w3.org/TR/html52/syntax.html#misnested-tags-b-p-b-p">Misnested tags: <code>&lt;b>&lt;p>&lt;/b>&lt;/p></code></a>.
+        </li>
+        <li><q>elements do not contain duplicate attributes</q>.
+          This is is another <strong>syntactical constraint</strong> and the easiest part of the success criterion.
+          Note that the <abbr>HTML</abbr> 5 specification's chapter on tokenization states that
+          <a href="https://www.w3.org/TR/html52/syntax.html#attribute-name-state">duplicate attributes</a>
+          are parse errors and that if a tag has more than one attribute with the same name, only the first one is retained in the syntax tree.
+        </li>
+        <li><q>any IDs are unique</q>.
+          This is also easy to understand, but unlike the previous requirement, this is strictly speaking a <strong>validity constraint, not a syntax constraint</strong>.
+          See <a href="https://www.w3.org/TR/xml/#id">Validity constraint: ID</a>
+          in the <abbr>XML</abbr> specification.
+          <!--See also XHTML 1.0: https://www.w3.org/TR/xhtml1/#h-4.10 -->
+          The <abbr>HTML</abbr> 5.2 specification does not discuss duplicate ID values in the chapter on parsing
+          but in the chapter on semantics:
+          <a href="https://www.w3.org/TR/html52/dom.html#element-attrdef-global-id">global attributes</a>.
+          <br />(Note that <abbr>HTML</abbr> 5 allows ID values that start with a number, whereas <abbr>XML</abbr> does not.
+          However, this is outside the scope of success criterion 4.1.1.)
+        </li>
+      </ul>
+    </section>
 
-    <p>Below is a list of test pages, some of which contain errors according to the
-      <a href="https://validator.w3.org/"><abbr>W3C</abbr>'s Validation Service</a>.
-      However, not all issues flagged by the validator are failures of success criterion 4.1.1.
-    </p>
-    <ul>
-      <li><a href="head-body-withouttags.html"><code>head</code> and <code>body</code> elements without start and end tags</a></li>
-      <li><a href="p-without-endtag.html"><code>p</code> element without end tag</a></li>
-      <li><a href="p-without-starttag.html"><code>p</code> element without start tag</a></li>
-      <li><a href="nested-span-elements.html">Nested <code>span</code> elements</a></li>
-      <li><a href="nested-a-links.html">Nested <code>a</code> elements</a></li>
-      <li><a href="em-b-overlappingelements.html">Overlapping <code>em</code> and <code>b</code> elements</a></li>
-      <li><a href="form-id-input-id.html"><code>form</code> element and <code>input</code> element with the same <code>id</code> attribute</a></li>
-      <li><a href="span-onclick-pseudolink.html"><code>span</code> element with <code>onclick</code> attribute to create a fake link</a></li>
-      <li><a href="issues-combined.html">page combining all of the above issues or features</a></li>
-      <!--
-      <li><a href=""></a></li>
-      -->
-    </ul>
+    <section>
+      <h2>Test Pages</h2>
+      <p>Below is a list of test pages, some of which contain errors according to the
+        <a href="https://validator.w3.org/"><abbr>W3C</abbr>'s Validation Service</a>.
+        However, not all issues flagged by the validator are failures of success criterion 4.1.1.
+      </p>
+      <ul>
+        <li><a href="head-body-withouttags.html"><code>head</code> and <code>body</code> elements without start and end tags</a></li>
+        <li><a href="p-without-endtag.html"><code>p</code> element without end tag</a></li>
+        <li><a href="p-without-starttag.html"><code>p</code> element without start tag</a></li>
+        <li><a href="nested-span-elements.html">Nested <code>span</code> elements</a></li>
+        <li><a href="nested-a-links.html">Nested <code>a</code> elements</a></li>
+        <li><a href="em-b-overlappingelements.html">Overlapping <code>em</code> and <code>b</code> elements</a></li>
+        <li><a href="form-id-input-id.html"><code>form</code> element and <code>input</code> element with the same <code>id</code> attribute</a></li>
+        <li><a href="span-onclick-pseudolink.html"><code>span</code> element with <code>onclick</code> attribute to create a fake link</a></li>
+        <li><a href="issues-combined.html">page combining all of the above issues or features</a></li>
+        <!--
+        <li><a href=""></a></li>
+        -->
+      </ul>
+    </section>
 
-    <p>Other relevant links:</p>
-    <ul>
-      <li><a href="https://validator.w3.org/"><abbr>W3C</abbr> Markup Validation Service</a></li>
-      <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/parsing">Understanding Success Criterion 4.1.1: Parsing (<abbr>WCAG</abbr> 2.1, <abbr>W3C</abbr>)</a></li>
-      <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G134.html">G134: Validating Web pages</a> (Techniques for <abbr>WCAG</abbr> 2.0, <abbr>W3C</abbr>)</li>
-      <li><a href="https://www.w3.org/TR/REC-xml/#sec-well-formed">Well-Formed <abbr>XML</abbr> Documents</a> (Extensible Markup Language (<abbr>XML</abbr>), <abbr>W3C</abbr>)</li>
-      <li><a href="https://www.w3.org/TR/html52/syntax.html#optional-tags">Optional Tags</a> (<abbr>HTML</abbr> 5.2, <abbr>W3C</abbr>)</li>
-      <li><a href="https://www.w3schools.com/xml/xml_validator.asp"><abbr>XML</abbr> Validator</a> (W3Schools)</li>
-    </ul>
+    <section>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://validator.w3.org/"><abbr>W3C</abbr> Markup Validation Service</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG21/Understanding/parsing">Understanding Success Criterion 4.1.1: Parsing (<abbr>WCAG</abbr> 2.1, <abbr>W3C</abbr>)</a></li>
+        <li><a href="https://www.w3.org/TR/WCAG20-TECHS/G134.html">G134: Validating Web pages</a> (Techniques for <abbr>WCAG</abbr> 2.0, <abbr>W3C</abbr>)</li>
+        <li><a href="https://www.w3.org/TR/REC-xml/#sec-well-formed">Well-Formed <abbr>XML</abbr> Documents</a> (Extensible Markup Language (<abbr>XML</abbr>), <abbr>W3C</abbr>)</li>
+        <li><a href="https://www.w3.org/TR/html52/syntax.html#optional-tags">Optional Tags</a> (<abbr>HTML</abbr> 5.2, <abbr>W3C</abbr>)</li>
+        <li><a href="https://www.w3schools.com/xml/xml_validator.asp"><abbr>XML</abbr> Validator</a> (W3Schools)</li>
+      </ul>
 
-    <p>Discussions about how to check conformance to this criterion and its potential removal from future versions of <abbr>WCAG</abbr>:</p>
-    <ul>
-      <li>Faulkner, Steve:
-        <a href="https://developer.paciellogroup.com/blog/2015/11/wcag-2-0-parsing-criterion-is-a-pita/"><abbr>WCAG</abbr> 2.0 Parsing Criterion is a <abbr title="pain in the ass">PITA</abbr></a>,
-        <i class="blog">Paciello Group blog</i>, 20.11.2015.
-      </li>
-      <li>
-        <a href="https://github.com/w3c/wcag/issues/542"><abbr>WCAG</abbr> Issue #542: 4.1.1 Parsing - Duplicate attributes with no user impact cause a conformance failure</a>:
-        submitted on GitHub in November 2018 and closed on 6 June 2019.
-      </li>
-      <li>
-        <a href="https://github.com/w3c/wcag/issues/770"><abbr>WCAG</abbr> Issue #770: Deprecating <abbr>SC</abbr> 4.1.1</a>:
-        submitted on GitHub in June 2019. The discussion on the previous issue is continued here.
-      </li>
-      <li>
-        <a href="https://lists.w3.org/Archives/Public/w3c-wai-gl/2019JulSep/0213.html">4.1.1 depreciation discussion</a>:
-        discussion thread on the <abbr title="Accessibility Guidelines Working Group">AGWG</abbr>'s mailing list, started on 20.09.2019.
-      </li>
-      <li>
-        <a href="https://lists.w3.org/Archives/Public/w3c-wai-ig/2019JanMar/0015.html">Re: <abbr>SC</abbr> 4.1.1 source fails but DOM passes - must a page fail?</a>
-        Sent to the <abbr title="Web Accessibility Initiative Interest Group">WAI-IG</abbr> mailing list on 11.01.2019.
-      </li>
-      <li>
-        <a href="https://lists.w3.org/Archives/Public/w3c-wai-ig/2019OctDec/0113.html">correct syntax versus content models according to <abbr>SC</abbr> 4.1.1 (Re: &lt;ol start="3"&gt; Is this accessible?)</a>
-        Sent to the <abbr>WAI-IG</abbr> mailing list on 27.11.2019.
-      </li>
-    </ul>
+      <p>Discussions about how to check conformance to this criterion and its potential removal from future versions of <abbr>WCAG</abbr>:</p>
+      <ul>
+        <li>Faulkner, Steve:
+          <a href="https://developer.paciellogroup.com/blog/2015/11/wcag-2-0-parsing-criterion-is-a-pita/"><abbr>WCAG</abbr> 2.0 Parsing Criterion is a <abbr title="pain in the ass">PITA</abbr></a>,
+          <i class="blog">Paciello Group blog</i>, 20.11.2015.
+        </li>
+        <li>
+          <a href="https://github.com/w3c/wcag/issues/542"><abbr>WCAG</abbr> Issue #542: 4.1.1 Parsing - Duplicate attributes with no user impact cause a conformance failure</a>:
+          submitted on GitHub in November 2018 and closed on 6 June 2019.
+        </li>
+        <li>
+          <a href="https://github.com/w3c/wcag/issues/770"><abbr>WCAG</abbr> Issue #770: Deprecating <abbr>SC</abbr> 4.1.1</a>:
+          submitted on GitHub in June 2019. The discussion on the previous issue is continued here.
+        </li>
+        <li>
+          <a href="https://lists.w3.org/Archives/Public/w3c-wai-gl/2019JulSep/0213.html">4.1.1 depreciation discussion</a>:
+          discussion thread on the <abbr title="Accessibility Guidelines Working Group">AGWG</abbr>'s mailing list, started on 20.09.2019.
+        </li>
+        <li>
+          <a href="https://lists.w3.org/Archives/Public/w3c-wai-ig/2019JanMar/0015.html">Re: <abbr>SC</abbr> 4.1.1 source fails but DOM passes - must a page fail?</a>
+          Sent to the <abbr title="Web Accessibility Initiative Interest Group">WAI-IG</abbr> mailing list on 11.01.2019.
+        </li>
+        <li>
+          <a href="https://lists.w3.org/Archives/Public/w3c-wai-ig/2019OctDec/0113.html">correct syntax versus content models according to <abbr>SC</abbr> 4.1.1 (Re: &lt;ol start="3"&gt; Is this accessible?)</a>
+          Sent to the <abbr>WAI-IG</abbr> mailing list on 27.11.2019.
+        </li>
+      </ul>
+    </section>
 
   </main>
 
