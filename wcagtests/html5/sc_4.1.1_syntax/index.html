@@ -6,6 +6,10 @@
   <link rel="top" href="../../../index.html" title="Accessibility Works: Home page" />
   <link rel="stylesheet" type="text/css" media="screen" href="../../../css/verdemoderna.css" title="default" />
   <meta name="robots" content="noindex, nofollow" />
+  <style type="text/css">
+    li samp { color: #333; font-family: Optima, 'Noto Sans', sans-serif; }
+    li samp code { border: 1px dashed #999; padding: 2px 4px; }
+  </style>
 </head>
 <body>
   <header id="header">
@@ -47,7 +51,7 @@
           In fact, this is explained in the note below the success criterion.
           <br />(Background:
           (1) Tags are not the same as elements. Tags are the character sequences that define where an element begins and ends.
-          Elements are essentially nodes in a syntax tree.
+          Elements are essentially nodes in a syntax tree (not any nodes, but instances of element types).
           (2) End tags are not required for every <abbr>HTML</abbr> element; for example,
           they are optional for elements such as <code>html</code>, <code>head</code>,
           <a href="https://www.w3.org/TR/html52/sections.html#the-body-element"><code>body</code></a>
@@ -109,6 +113,100 @@
         <!--
         <li><a href=""></a></li>
         -->
+      </ul>
+
+      <p>Examples of validator errors or warnings that are failures of success criterion 4.1.1 include the following:</p>
+      <ul>
+        <li><samp>End tag <code>div</code> seen, but there were open elements.</samp></li>
+        <li><samp>Stray end tag <code>a</code>.</samp></li>
+        <li><samp>Stray end tag <code>section</code>.</samp></li>
+        <li><samp>End tag <code>em</code> violates nesting rules.</samp></li>
+        <li><samp>Duplicate attribute <code>class</code>.</samp></li>
+        <li><samp>Duplicate attribute <code>id</code>.</samp></li>
+        <li><samp>Duplicate ID <code>suche-1</code>.</samp></li>
+      </ul>
+      <p>The following errors and warnings are not failures of success criterion 4.1.1.
+        Some of them are violations (or potential violations) of other success criteria,
+        whereas others are not relevant to any success criterion.
+      </p>
+      <ul>
+        <li><samp>An <code>img</code> element must have an <code>alt</code> attribute, except under certain conditions.</samp>
+          <br />(See success criterion 1.1.1.)
+        </li>
+        <li><samp>The <code>banner</code> role is unnecessary for element <code>header</code>.</samp>
+          <br />(This warning can be reported under success criterion 4.1.2 Name, Role, Value,
+          even though that success criterion is strictly speaking only about user interface components.)
+        </li>
+        <li><samp>Attribute <code>placeholder</code> not allowed on element <code>input</code> at this point.</samp>
+          <br />(This is a pure validation error, not a syntax error.)
+        </li>
+        <li><samp>Start tag <code>a</code> seen but an element of the same type was already open.</samp>
+          <br />(This is a validation error; however, see the syntax error in the preceding list.)
+        </li>
+        <li><samp>Section lacks heading. Consider using <code>h2</code>-<code>h6</code> elements to add identifying headings to all sections.</samp></li>
+        <li>Attribute with the local name <code>xmlns:og</code> is not serializable as <abbr>XML</abbr> 1.0.
+          <!--Found on 23.10.2020 at https://classiques-garnier.com/les-miserables-tome-ii.html -->
+        </li>
+        <li><samp>Bad start tag in <code>img</code> in <code>noscript</code> in <code>head</code>.</samp>
+          <!--Found on 23.10.2020 at https://classiques-garnier.com/les-miserables-tome-ii.html -->
+        </li>
+        <li><samp>This document appears to be written in English. Consider adding <code>lang="en"</code> (or variant) to the <code>html</code> start tag.</samp>
+          <br />(See success criterion 3.1.1.)
+          <!--Found on 23.10.2020 at https://literature.stackexchange.com/questions/16080/resources-for-determining-the-meter-of-a-line-in-shakespeare -->
+        </li>
+        <li><samp>Element <code>div</code> not allowed as child of element <code>ol</code> in this context. (Suppressing further errors from this subtree.)</samp>
+          <br />(This is a pure validation error, not a syntax error.)
+        </li>
+        <li><samp>Possible misuse of <code>aria-label</code>.</samp>
+          <!--Found on 23.10.2020 at https://literature.stackexchange.com/questions/16080/resources-for-determining-the-meter-of-a-line-in-shakespeare -->
+          <br />(Found on a page with the following code:
+          <code>&lt;div class="grid--cell mr12" aria-label="notice-message"></code>.)
+        </li>
+        <li><samp>Bad value <code></code>&nbsp;for attribute <code>aria-controls</code> on element <code>button</code>:
+          An IDREFS value must contain at least one non-whitespace character.</samp>
+          <!--Found on 23.10.2020 at https://literature.stackexchange.com/questions/16080/resources-for-determining-the-meter-of-a-line-in-shakespeare -->
+          <br />(Found on a page with an empty <code>aria-controls</code> attribute.)
+        </li>
+        <li><samp>The <code>name</code> attribute is obsolete. Consider putting an <code>id</code> attribute on the nearest container instead.</samp>
+          <!--Found on 23.10.2020 at https://literature.stackexchange.com/questions/16080/resources-for-determining-the-meter-of-a-line-in-shakespeare -->
+          <br />(This is a pure validation error, not a syntax error.)
+        </li>
+        <li><samp>Bad value <code>status</code> for attribute <code>role</code> on element <code>aside</code>.</samp>
+          <!--Found on 23.10.2020 at https://literature.stackexchange.com/questions/16080/resources-for-determining-the-meter-of-a-line-in-shakespeare -->
+          <br />(This is a pure validation error, not a syntax error. See success criterion 2.4.6 or 4.1.2.)
+        </li>
+        <li><samp>The <code>aria-describedby</code> attribute must point to an element in the same document.</samp>
+          <!--Found on 23.10.2020 at https://literature.stackexchange.com/questions/16080/resources-for-determining-the-meter-of-a-line-in-shakespeare -->
+          <br />(Depending on context, this may be relevant to success criterion 4.1.2 or 4.1.3.)
+        </li>
+        <li><samp>The <code>aria-controls</code> attribute must point to an element in the same document.</samp>
+          <!---Found on 23.10.2020 at https://www.behindertenrechtskonvention.info/ -->
+        </li>
+        <li><samp>Consider using the <code>h1</code> element as a top-level heading only
+          (all <code>h1</code> elements are treated as top-level headings by many screen readers and other tools).</samp>
+          <br />(Potentially relevant to success criterion 1.3.1.)
+          <!---Found on 23.10.2020 at Stack Exchange and at https://www.behindertenrechtskonvention.info/ -->
+        </li>
+        <li><samp>X-UA-Compatible <abbr>HTTP</abbr> header must have the value <code>IE=edge</code>, was <code>IE=Edge,chrome=1</code>.</samp>
+          <!--Found on 23.10.2020 at https://www.routledge.com/Suffocating-Mothers-Fantasies-of-Maternal-Origin-in-Shakespeares-Plays/Adelman/p/book/9780415900393 -->
+        </li>
+        <li><samp>Bad value <code>https://fonts.googleapis.com/css?family=Source Code Pro</code> for attribute <code>href</code> on element <code>link</code>:
+          Illegal character in query: space is not allowed.</samp>
+          <!--Found on 23.10.2020 at https://www.w3schools.com/cssref/pr_font_font-family.asp -->
+        </li>
+        <li><samp><abbr>CSS</abbr>: <code>xright</code>: Property <code>xright</code> doesn't exist.</samp>
+          <!--Found on 23.10.2020 at https://www.w3schools.com/cssref/pr_font_font-family.asp -->
+        </li>
+        <li><samp><abbr>CSS</abbr>: <code>color</code>: Parse Error.</samp>
+          <br />(Parse errors in <abbr>CSS</abbr> don't count.)
+          <!--Found on 23.10.2020 at https://www.w3schools.com/cssref/pr_font_font-family.asp -->
+        </li>
+        <li><samp>Document uses the Unicode Private Use Area(s), which should not be used in publicly exchanged documents. (Charmod C073)</samp>
+          <!--Found on 23.10.2020 at https://www.w3schools.com/cssref/pr_font_font-family.asp -->
+        </li>
+        <li><samp>The element noscript must not appear as a descendant of the noscript element.</samp>
+          <!---Found on 23.10.2020 at https://www.behindertenrechtskonvention.info/ -->
+        </li>
       </ul>
     </section>
 
