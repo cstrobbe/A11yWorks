@@ -1,6 +1,6 @@
 # A11yWorks / Accessibility Works
 
-Repository of documents and test files related to accessibility.
+Repository of documents and test files related to accessibility, especially web accessibility.
 
 ## Licence and Copyright
 
