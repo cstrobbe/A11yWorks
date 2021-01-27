@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>WCAG 2.1 SC 4.1.1 Syntax Test Page  One</title>
+  <title>WCAG 2.1 SC 4.1.1 Syntax Test Page  Two</title>
   <header>
-    <h1><abbr>WCAG</abbr> 2.1 <abbr>SC</abbr> 4.1.1 Syntax Test Page One</h1>
+    <h1><abbr>WCAG</abbr> 2.1 <abbr>SC</abbr> 4.1.1 Syntax Test Page Two</h1>
   </header>
   <main>
+      <span><h2>Heading level 2 inside a span element</h2></span>
       <p><em> (not bold) <b> (bold?) </em> (not bold) </b>.</p>
 
       <p><a href="https://www.w3.org/">
@@ -28,10 +29,15 @@
           <label>Search: </label>
           <input id="suche-1" name="suche-1" type="search" maxlength="1000" size="60" />
           <input type="submit" value="Submit query" />
+          <input type="reset" alt="Clear the form" value="Reset" />
         </form>
       </section>
 
       <p><span class="link" onclick="location='https://www.w3.org/'" lang="en">World Wide Web Consortium (<abbr>W3C</abbr>)</span></p>
+
+      <p><span href="https://github.com/BIK-BITV/BIK-Web-Test" type="submit">BIK-Web-Test on GitHub</span>:
+        code repository for a web accessibility evaluation procedure developed in Germany.
+      </p>
 
     </main>
   </body>
