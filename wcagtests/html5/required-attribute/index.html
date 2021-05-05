@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Test Pages for required and aria-required</title>
+  <link rel="top" href="../../../index.html" title="Accessibility Works: Home page" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../../css/verdemoderna.css" title="default" />
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    form { margin-bottom: 2rem;
+      padding-left: 0.5rem;
+      border: 1px dotted gray;
+      border-radius: 4px; 
+    }
+    label { display: inline-block; width: 8rem; }
+    input:focus { background-color: #fffacd; }
+    input:invalid { border-color: red; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <h1><span class="h1txt">Test Pages for <code>required</code> and <code>aria-required</code></span></h1>
+  </header>
+
+  <main id="main">
+    <p>With the <code>required</code> attribute:</p>
+    <form action="index.html" method="post" enctype="multipart/form-data" name="freetext">
+      <p><label for="fname-1">First name: </label>
+        <input type="text" id="fname-1" name="fname" minlength="1" required="required" size="35" />
+      </p>
+      <p><label for="lname-1">Last name: </label>
+        <input type="text" id="lname-1" name="lname" minlength="1" required="required" size="35" />
+      </p>
+      <p><label for="email-1">E-mail: </label>
+        <input type="email" id="email-1" name="email" minlength="6" required="required" size="35" />
+      </p>
+      <p><label for="phone-1">Phone number: </label>
+        <input type="tel" id="phone-1" name="phone" minlength="6" required="required" size="35" />
+      </p>
+    </form>
+
+    <p>With the <code>aria-required</code> attribute:</p>
+    <form action="index.html" method="post" enctype="multipart/form-data" name="freetext">
+      <p><label for="fname-2">First name: </label>
+        <input type="text" id="fname-2" name="fname" minlength="1" aria-required="true" size="35" />
+      </p>
+      <p><label for="lname-2">Last name: </label>
+        <input type="text" id="lname-2" name="lname" minlength="1" aria-required="true" size="35" />
+      </p>
+      <p><label for="email-2">E-mail: </label>
+        <input type="email" id="email-2" name="email" minlength="6" aria-required="true" size="35" />
+      </p>
+      <p><label for="phone-2">Phone number: </label>
+        <input type="tel" id="phone-2" name="phone" minlength="6" aria-required="true" size="35" />
+      </p>
+    </form>
+
+    <p>With the <code>required</code> attribute and the <code>autocomplete</code> attribure:</p>
+    <form action="index.html" method="post" enctype="multipart/form-data" name="freetext">
+      <p><label for="fname-3">First name: </label>
+        <input type="text" id="fname-3" name="fname" autocomplete="given-name" minlength="1" required="required" size="35" />
+      </p>
+      <p><label for="lname-3">Last name: </label>
+        <input type="text" id="lname-3" name="lname" autocomplete="family-name" minlength="1" required="required" size="35" />
+      </p>
+      <p><label for="email-3">E-mail: </label>
+        <input type="email" id="email-3" name="email" autocomplete="email" minlength="6" required="required" size="35" />
+      </p>
+      <p><label for="phone-3">Phone number: </label>
+        <input type="tel" id="phone-3" name="phone" autocomplete="tel" minlength="6" required="required" size="35" />
+      </p>
+    </form>
+
+    <p>With the <code>aria-required</code> attribute and the <code>autocomplete</code> attribure:</p>
+    <form action="index.html" method="post" enctype="multipart/form-data" name="freetext">
+      <p><label for="fname-4">First name: </label>
+        <input type="text" id="fname-4" name="fname" autocomplete="given-name" minlength="1" aria-required="true" size="35" />
+      </p>
+      <p><label for="lname-4">Last name: </label>
+        <input type="text" id="lname-4" name="lname" autocomplete="family-name" minlength="1" aria-required="true" size="35" />
+      </p>
+      <p><label for="email-4">E-mail: </label>
+        <input type="email" id="email-4" name="email" autocomplete="email" minlength="6" aria-required="true" size="35" />
+      </p>
+      <p><label for="phone-4">Phone number: </label>
+        <input type="tel" id="phone-4" name="phone" autocomplete="tel" minlength="6" aria-required="true" size="35" />
+      </p>
+    </form>
+
+    <!--
+    <p>Findings from May 2022:</p>
+    <ul>
+    </ul>
+    -->
+
+    <p>See also:</p>
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-required_attribute">Using the aria-required attribute</a>,
+        <i class="website"><abbr>MDN</abbr></i>.
+      </li>
+      <li>
+        <a href="https://www.w3.org/TR/WCAG20-TECHS/ARIA2.html">ARIA2: Identifying a required field with the aria-required property</a>,
+        <i class="website">Techniques for <abbr>WCAG</abbr> 2.0, <abbr>W3C</abbr></i>.
+      </li>
+      <li>
+        <a href="https://www.w3.org/TR/html52/sec-forms.html#the-required-attribute">The required attribute</a>,
+        <i class="website"><abbr>HTML</abbr> 5.2, <abbr>W3C</abbr></i>.
+      </li>
+      <li>
+        <a href="https://stackoverflow.com/q/37974796/6002174">When to use the required attribute vs the aria-required attribute for input elements?</a>,
+        <i class="website">Stack Overflow</i>, question submitted on 22.06.2016.
+      </li>
+      <li>
+        <a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H98">Using <abbr>HTML</abbr> 5.2 autocomplete attributes</a>,
+        <i class="website">Techniques for <abbr>WCAG</abbr> 2.1, <abbr>W3C</abbr></i>.
+      </li>
+    </ul>
+
+  </main>
+
+  <footer id="footer">
+    <p id="licence">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License Attribution-ShareAlike" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+      <br />
+      <span><a href="http://cstrobbe.github.io/A11yWorks/">Accessibility Works</a></span>
+      by
+      <a href="https://github.com/cstrobbe">Christophe Strobbe</a>
+      is licensed under a <a lang="en-US" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+    <p>You can <a href="https://github.com/cstrobbe/A11yWorks">fork the code</a> on GitHub.</p>
+  </footer>
+</body>
+</html>
