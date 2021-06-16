@@ -71,7 +71,7 @@ input[id], select[id], textarea[id], label[for] { border: 2px dotted green; }
 
 /* SC 1.3.2a: make focus more visible to check meaningful (tab) sequence: */
 /*
-a:focus, h1:focus, h2:focus, h3:focus, h4:focus, input:focus, select:focus, button:focus, textarea:focus { outline: 3px solid lime; }
+li[role=menuitme]:focus a, a:focus, h1:focus, h2:focus, h3:focus, h4:focus, input:focus, select:focus, button:focus, textarea:focus { outline: 3px solid lime; }
 figure:focus { border: 3px dashed lime; }
 */
 
