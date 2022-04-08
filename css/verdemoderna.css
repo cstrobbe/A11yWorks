@@ -2,7 +2,9 @@
   but without the graphics, which are copyrighted, with more contrasting colours, etc.
   In fact, there's not much left of Shea's original design.
 */
-
+p.site-moved-warning { border: 2px solid red; padding: 5px;
+  font-size: 1.5em;
+}
 html {
   padding: 0;
   margin: 0;
